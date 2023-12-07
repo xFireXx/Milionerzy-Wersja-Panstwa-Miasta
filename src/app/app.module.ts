@@ -7,6 +7,8 @@ import { GameComponent } from './modules/game/game.component';
 import { HomeComponent } from './modules/home/home.component';
 import { ContainernameComponent } from './modules/game/components/containername/containername.component';
 import { FormsModule } from '@angular/forms';
+import { PrizeboxComponent } from './modules/game/components/prizebox/prizebox/prizebox.component';
+import { PrizeComponent } from './modules/game/components/prizebox/prize/prize.component';
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import { FormsModule } from '@angular/forms';
     GameComponent,
     HomeComponent,
     ContainernameComponent,
+    PrizeboxComponent,
+    PrizeComponent,
   ],
   imports: [
     BrowserModule,

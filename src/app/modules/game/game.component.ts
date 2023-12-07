@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { PlayerService } from './services/player/player.service';
 
 @Component({
@@ -9,14 +9,18 @@ import { PlayerService } from './services/player/player.service';
 export class GameComponent implements OnInit {
 
   hasPlayerName: boolean = false;
+  playerName: string | null = '';
 
   constructor(private playerService: PlayerService) {}
 
   ngOnInit() {
     this.playerService.playerName$.subscribe((playerName) => {
       this.hasPlayerName = playerName !== null && playerName !== undefined && playerName !== '';
+      this.playerName = playerName;
     });
 
     this.hasPlayerName = this.playerService.getPlayerName() !== null;
+    this.playerName = this.playerService.getPlayerName();
   }
 }
+

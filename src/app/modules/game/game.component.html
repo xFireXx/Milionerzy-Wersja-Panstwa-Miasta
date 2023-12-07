@@ -1,1 +1,9 @@
 <app-containername *ngIf="!hasPlayerName"></app-containername>
+<div class="flex flex-row">
+    <div class="basis-11/12">
+        
+    </div>
+    <div class="basis-1/2">
+        <app-prizebox *ngIf="hasPlayerName"  [playerName]="playerName"></app-prizebox>
+    </div>
+</div>
